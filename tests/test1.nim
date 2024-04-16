@@ -8,5 +8,13 @@
 import unittest
 
 import simpleMail
-test "can add":
-  check add(5, 5) == 10
+test "print message":
+  let message = initMessage("This is test subject", "sendFrom@test.com", @["sendTo@test.com"], @["ccTo@test.com"], @[("addHeaderName", "addHeaderValue")], "6328fdefd21m83jfffmf")
+  echo $message
+  
+
+test "print html and files message":
+  let message = initMessage("This is test subject", "sendFrom@test.com", @["sendTo@test.com"], @["ccTo@test.com"], @[("addHeaderName", "addHeaderValue")], "6328fdefd21m83jfffmf")
+  message.addHtml("<h1>header1</h1>")
+  message.addFiles(@["./tests/test1.nim"])
+  echo $message
