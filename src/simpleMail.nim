@@ -30,7 +30,7 @@ proc serverConnect*(ip: string, port: int, useSsl: bool, user: string = "", pass
   result = newSmtp(useSsl=useSsl)
   result.connect(ip, Port port)
   if user != "":
-    result.auth("username", "password")
+    result.auth(user, password)
 
 
 proc initMessage*(subject, sender: string, to, cc: seq[string], addHeader: seq[tuple[name, value:string]] = @[], tag: string = "8s2dF9gP4hT6jK1l3zX7cV5bN0mQ8wE2"): MultMessage =
