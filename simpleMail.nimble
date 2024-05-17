@@ -9,5 +9,5 @@ srcDir        = "src"
 
 # Dependencies
 
-requires "nim >= 2.0.2"
+requires "nim >= 1.0.0"
 requires "smtp"
